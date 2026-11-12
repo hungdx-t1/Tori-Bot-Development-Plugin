@@ -1,6 +1,8 @@
+// settings.gradle.kts
+
 import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
 
-rootProject.name = "tori-bot-development-plugin"
+rootProject.name = "tori-bot-development-plugin" // "tori-intellij-plugin"
 
 pluginManagement {
     plugins {

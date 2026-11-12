@@ -1,35 +1,32 @@
-<!-- This is an example of a bot's pom.xml file -->
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>mino.dx.curseletcraft.example</groupId>
-    <artifactId>ExampleBot</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>{{GROUP_ID}}</groupId>
+    <artifactId>{{NAME}}</artifactId>
+    <version>{{VERSION}}</version>
     <packaging>jar</packaging>
 
-    <name>ExampleBot</name>
-    <url>http://maven.apache.org</url>
+    <name>{{NAME}}</name>
 
-    <!-- if we use dave protocol, plugin will replace source and target to 25 as well -->
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>{{JAVA_VERSION}}</maven.compiler.source>
+        <maven.compiler.target>{{JAVA_VERSION}}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <tori.version>26.10.0</tori.version> <!-- auto get latest version via github -->
+        <tori.version>{{TORI_VERSION}}</tori.version>
     </properties>
 
     <build>
-        <finalName>XyriusBot</finalName>
+        <finalName>{{NAME}}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <!-- if we use dave protocol, plugin will replace source and target to 25 as well -->
-                    <source>25</source>
-                    <target>25</target>
+                    <source>{{JAVA_VERSION}}</source>
+                    <target>{{JAVA_VERSION}}</target>
                 </configuration>
             </plugin>
 
@@ -91,12 +88,6 @@
             <version>${tori.version}</version>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.github.hungdx-t1.Tori</groupId>
-            <artifactId>tori-extension-dave</artifactId>
-            <version>${tori.version}</version>
-            <scope>provided</scope> <!-- It should be left as "provided" because the tori server with Dave is already available -->
-        </dependency>
+        {{DAVE_DEPENDENCY}}
     </dependencies>
 </project>
